@@ -3,9 +3,9 @@
 body {
     /*overflow-y: scroll;
     height: 100%; */
-    background: none repeat scroll 0 0 #FFFFFF;
+    background: none repeat scroll 0 0 #f1f4f8;
     color: #000000;
-    font-family: sans-serif;
+    font-family: "Lucida Grande", Helvetica, sans-serif;
     font-size: 12px;
     line-height: 150%;
     margin: 0;
@@ -149,19 +149,29 @@ blockquote {
 }
 
 #wrapper, #announcement {
-    margin: auto;
-    padding: 0;
-    width: 990px;
+    margin: 0 auto;
+    padding: 10px;
+    width: 1000px;
     background-color: #FFF;
+    border-radius: 0 0 5px 5px;
 }
 
 #roof {
-    width: 990px;
+    background: #424242; /* Old browsers */
+    background: -moz-linear-gradient(top, #424242 0%, #000000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#424242), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #424242 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #424242 0%,#000000 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #424242 0%,#000000 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#424242', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #424242 0%,#000000 100%); /* W3C */
+    border-radius: 5px 5px 0 0;
+    margin-top: 50px;
+    padding: 10px;
+    width: 1000px;
 }
 
 #room {
-    background-color: #FFFFFF;
-    border-bottom: 1px solid #777777;
     padding: 10px 0;
 }
 
@@ -183,23 +193,16 @@ blockquote {
 }
 
 #ground {
-    background: none repeat scroll 0 0 #BDCCED;
-    border-top: 1px solid #000000;
-    padding-bottom: 0;
-    padding-top: 6px;
     text-align: center;
-    width: 990px;
 }
 
-#top {
+#links {
     float: right;
-    background-color: #FFFFFF;
     padding: 3px;
     text-align: right;
-    width: 500px;
 }
 
-#top a {
+#links a {
     color: #333333;
     font-size: 12px;
     height: 35px;
@@ -208,79 +211,90 @@ blockquote {
     text-decoration: underline;
 }
 
-#logo {
-    float: left;
-    padding: 5px 0 0;
-}
-
 #nav {
-    float: right;
-    margin: 35px 0px 0px 0px;
-    width: 750px;
+    float: left;
+    margin: 0;
 }
 
 #nav a {
-    background-color: #E5EBF8;
-    border-color: #888888 #888888 -moz-use-text-color;
-    border-style: solid solid none;
-    border-width: 1px 1px medium;
+    background-color: #d1d1d1;
+    border-radius:4px;
     color: #333333;
     display: block;
     float: left;
     font-size: 14px;
-    font-weight: 400;
-    height: 25px;
-    line-height: 30px;
-    margin-left: 10px;
-    padding: 0 12px 3px;
+    margin-right: 10px;
+    padding: 4px 12px 5px;
     text-decoration: none;
+    text-transform: capitalize;
 }
 
 #nav a:hover {
-    text-decoration: underline;
+    background: none repeat scroll 0 0 #fff;
+    color: #0089a2;
 }
 
 #nav a.on {
-    background: none repeat scroll 0 0 #356FCB;
-    border: 1px solid #356FCB;
-    color: #FFFFFF;
+    background: none repeat scroll 0 0 #fff;
+    color: #0089a2;
     font-weight: 600;
-    height: 24px;
-    line-height: 28px;
     text-decoration: none;
 }
 
-#nav a#nav_ask {
-    float: right;
-    color: #B02B2C;
-    font-size: 14px;
+.ask {
+    float:right;
+}
+
+#question {
+    background-color: #00c5e9;
+    border-radius: 5px;
+    box-shadow: 0 5px 0 #E5F3F6;
     font-weight: bold;
-    text-decoration: none;
+    margin: 5px 20px 7px;
+    padding: 8px 15px;
+    text-align: center;
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    -moz-transition: background-color .4s;  /* FF4+ */
+    -o-transition: background-color .4s;  /* Opera 10.5+ */
+    -webkit-transition: background-color .4s;  /* Saf3.2+, Chrome */
+    -ms-transition: background-color .4s;  /* IE10? */
+    transition: background-color .4s;
 }
 
-#nav a#nav_ask:hover {
-    text-decoration: underline;
+#question:hover {
+    background-color: #00d8ff;
+    text-decoration:none;
 }
 
-#nav a#nav_ask.on {
-   color: #FFFFFF;
+#portamento_container {
+    position:relative;
+}
+
+#portamento_container #topBar {
+    position:absolute;
+    box-shadow: 0 2px 5px #AAAAAA;
+    z-index:1000;
+    background-color:#fff;
+    width:100%;
+}
+
+#portamento_container #topBar.fixed {
+    position:fixed;
 }
 
 #searchBar {
     text-align: center;
-    background-color: #B6C4E2;
-    border-color: #EEEEEC #A9ACA5 #BABDB6 #EEEEEC;
-    border-style: solid;
-    border-width: 1px;
-    padding: 4px 0 0;
-    width: 988px;
+    float:left;
+    padding: 10px 0 10px 20px;
 }
 
 #searchBar .content {
 }
 
 #searchBar .searchInput {
-    border: 0px;
+    border: 1px solid #DDD;
     padding: 3px;
     font-size: 13px;
     height: 18px;
@@ -297,6 +311,7 @@ blockquote {
     color: #333333;
     font-size: 120%;
     padding: 3px 0;
+    display: none;
 }
 
 #searchBar .options input {
@@ -319,12 +334,21 @@ blockquote {
 }
 
 .short-summary {
-    border-top: 1px dotted #CCCCCE;
+    border-bottom: 1px solid #EEEEEE;
+    border-top: 1px solid #FFFFFF;
     float: left;
     overflow: hidden;
-    padding: 3px 0px 5px 0;
+    padding: 3px;
     position: relative;
     width: 740px;
+    background-color:#f5f9fc;
+    background: -moz-linear-gradient(top, #ffffff 0%, #f5f9fc 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f5f9fc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f5f9fc 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#f5f9fc 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#f5f9fc 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f9fc',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #ffffff 0%,#f5f9fc 100%); /* W3C */
 }
 
 #listA .short-summary:first-of-type {
@@ -336,15 +360,25 @@ blockquote {
 }
 
 .short-summary h2 a {
-    color: #2A5594;
-    font-family: "Trebuchet MS", "segoe ui", arial, sans-serif;
-    font-size: 17px;
+    color: #0a3575;
+    font-size: 15px;
+    -moz-transition: color .4s;  /* FF4+ */
+    -o-transition: color .4s;  /* Opera 10.5+ */
+    -webkit-transition: color .4s;  /* Saf3.2+, Chrome */
+    -ms-transition: color .4s;  /* IE10? */
+    transition: color .4s;
+}
+
+.short-summary h2 a:hover {
+    color: #2a80ff;
+    text-decoration: none;
 }
 
 .short-summary .userinfo {
     color: #666666;
     float: right;
     margin-top: 8px;
+    font-size: 10px;
 }
 
 .userinfo a, a.userinfo {
@@ -359,7 +393,7 @@ blockquote {
 }
 
 .short-summary .counts .item-count {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -370,18 +404,18 @@ blockquote {
 
 .short-summary .votes, .short-summary .status, .short-summary .views {
     -moz-border-radius: 5px 5px 5px 5px;
-    border-bottom: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
     float: left;
-    font-size: 11px;
-    height: 42px;
-    margin: 0 6px 0 0px;
-    padding: 8px 2px 0;
+    font-size: 10px;
+    margin: 0 4px 0 0px;
+    padding: 5px 2px 3px;
     text-align: center;
     width: 46px;
 }
 
+
+
 .short-summary .votes, .short-summary .views {
+    background-color: #fff;
     color: #666666;
 }
 
@@ -433,10 +467,7 @@ blockquote {
 }
 
 .boxC {
-    background: none repeat scroll 0 0 #E5EBF8;
-    border-color: #EEEEEC #A9ACA5 #BABDB6 #EEEEEC;
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid #dedede;
     margin-bottom: 8px;
     padding: 10px;
 }
@@ -456,13 +487,13 @@ blockquote {
 
 .pager {
     float: left;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     margin-top: 10px;
 }
 
 .pagesize {
     float: right;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     margin-top: 10px;
 }
 
@@ -472,10 +503,7 @@ blockquote {
 }
 
 .paginator .prev a, .paginator .prev a:visited, .paginator .next a, .paginator .next a:visited {
-    background-color: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    color: #777777;
-    font: bold 100% sans-serif;
+    color: #bbb;
     padding: 2px 4px 3px;
 }
 
@@ -487,32 +515,24 @@ blockquote {
     margin-left: 0.5em;
 }
 
-.paginator .page, .paginator .page a:visited, .paginator .curr {
-    background-color: #FFFFFF;
-    border: 1px solid #CCCCCC;
-    color: #777777;
-    font: 0.875em verdana;
+.paginator .page, .paginator .page a:visited, .paginator .page a, .paginator .curr {
+    color: #bbb;
     margin: 0 0.25em;
     padding: 0.25em;
 }
 
 .paginator .curr {
-    background-color: #777777;
-    border: 1px solid #777777;
-    color: #FFFFFF;
+    color: #000;
     font-weight: bold;
 }
 
 .paginator .page:hover, .paginator .prev a:hover, .paginator .next a:hover {
-    background-color: #777777;
-    border: 1px solid #777777;
-    color: #FFFFFF;
+    color: #0A3575;
     text-decoration: none;
 }
 
 .paginator .text {
-    color: #777777;
-    font: bold 100% sans-serif;
+    color: #bbb;
     padding: 0.3em;
 }
 
@@ -524,24 +544,25 @@ blockquote {
     display: block;
     font-family: sans-serif;
     line-height: 200%;
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 .tags a, span.tag {
-    background-color: #EEEEEE;
-    border-bottom: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    color: #777777;
+    background-color: #EDF0F0;
+    border-radius:3px;
+    color: #5E959A;
     font-size: 11px;
     font-weight: normal;
     padding: 1px 8px;
     text-decoration: none;
     white-space: nowrap;
+    text-shadow: 0 1px 0 #FFFFFF;
 }
 
 .tags a:hover {
     background-color: #356FCB;
     color: #FFFFFF;
+    text-shadow: 0 0 0 transparent;
 }
 
 .tag-number {
@@ -584,7 +605,7 @@ a.medal:hover {
 
 .tabBar {
     background-color: #FFFFFF;
-    border-bottom: 1px solid white;
+    border-bottom: 3px solid #f9f9f9;
     clear: both;
     height: 30px;
     margin-bottom: 3px;
@@ -602,13 +623,12 @@ a.medal:hover {
 
 .tabsA a, .sticky-sort-tabs {
     background: none repeat scroll 0 0 #EEEEEE;
-    border-bottom: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
+    border: 1px solid #CCCCCC;
+    border-radius:4px;
     color: #888A85;
     display: block;
     float: left;
     height: 20px;
-    line-height: 22px;
     margin: 5px 4px 0 0;
     text-decoration: none;
 }
@@ -650,7 +670,6 @@ a.medal:hover {
 }
 
 .headQuestions {
-    background: url("../images/dot-list.gif") no-repeat scroll left center transparent;
     border-bottom: 0 solid #777777;
     float: left;
     font-size: 15px;
@@ -658,7 +677,8 @@ a.medal:hover {
     height: 23px;
     line-height: 23px;
     margin: 5px 0 0 5px;
-    padding: 0 6px 0 15px;
+    padding: 0 6px 0 0;
+    color: #bbb;
 }
 
 .headUsers {
@@ -768,18 +788,18 @@ ul.errorlist li {
 }
 
 .answered {
-    background: none repeat scroll 0 0 #E5EBF8;
+    background: none repeat scroll 0 0 #EAF7FF;
     color: #314362;
 }
 
 .answered-accepted, .answer-votes.answered-accepted {
-    background: none repeat scroll 0 0 #E6F8DD;
+    background: none repeat scroll 0 0 #eaffe4;
     color: #3A6231;
 }
 
 .unanswered {
-    background: none repeat scroll 0 0 #F3E3E1;
-    color: #6B2B28;
+    background: none repeat scroll 0 0 #fffde4;
+    color: #5a5500;
 }
 
 .tagsList {
@@ -1765,6 +1785,7 @@ div.dialog.prompt .dialog-content select, div.dialog.prompt .dialog-content text
 
 .feed-icon {
     width: 14px;
+    margin-top: 10px;
     height: 14px;
     display: inline-block;
 }
@@ -1828,5 +1849,3 @@ div.wmd-button {
     color:white;
 }
 div.wmd-button-bar {
-    float:left;
-}

@@ -1,28 +1,27 @@
 <!-- template header.html -->
 {% load extra_tags ui_registry i18n extra_filters markup %}
 
-	<div id="roof">
-	  
-		<div id="logo">
-			<a href="{% url index %}">
-				<img src="{{ settings.APP_LOGO }}" title="{% trans "back to home page" %}" alt="{{settings.APP_TITLE}} logo"/>
-			</a>
-		</div>
-	  
-		<div id="top">
-		    {% loadregistry header_links %}{% endloadregistry %}
-		</div>
-
-    <div id="nav">
-        {% loopregistry page_top_tabs %}{% spaceless %}
-            <a id="nav_{{ tab_name }}"{% ifequal tab tab_name %} class="on"{% endifequal %} href="{{ tab_url }}" >{{ tab_title }}</a>
-        {% endspaceless %}{% endloopregistry %}
-        <a id="nav_ask" href="{% url ask %}" class="special">{% trans "ask a question" %}</a>
-    </div>
+<div class="header">
+  <div class="logoHome">
+    <a title="Home" href="/">
+      <img height="36" align="left" alt="Nuxeo Community" src="http://www.nuxeo.com/var/storage/community/nuxeo_logo.png">
+    </a>
   </div>
 
-  <div class="clear"></div>
-  
+  <div class="externalLinks">
+    <ul>
+      <li class="active"><a href="http://community.nuxeo.com/">Home</a></li>
+      <li><a href="http://forum.nuxeo.com/">Forums</a></li>
+      <li><a href="http://doc.nuxeo.com/">Documentation</a></li>
+      <li><a href="http://blogs.nuxeo.com/">Blogs</a></li>
+    </ul>
+    <ul class="corp">
+      <li><a href="http://nuxeo.com/">Nuxeo.com</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div id="topBar">  
 	<div id="searchBar">
     <form action="{% url search %}" method="get">
         <div>
@@ -37,11 +36,28 @@
         </div>
     </form>	
 	</div>
-
-	{% if settings.USE_ANNOUNCEMENT_BAR|or_preview:request %}
+    <div class="ask"><a id="question" href="{% url ask %}" class="special">{% trans "ask a question" %}</a></div>
+  <div class="clear"></div>
+    </div>
+        {% if settings.USE_ANNOUNCEMENT_BAR|or_preview:request %}
   <div id="announcement">
       {{ settings.ANNOUNCEMENT_BAR|or_preview:request|static_content:settings.ANNOUNCEMENT_BAR_RENDER_MODE }}
   </div>
   {% endif %}
+
+<div id="roof">
+        <div id="links">
+            {% loadregistry header_links %}{% endloadregistry %}
+        </div>
+    <div id="nav">
+        {% loopregistry page_top_tabs %}{% spaceless %}
+            <a id="nav_{{ tab_name }}"{% ifequal tab tab_name %} class="on"{% endifequal %} href="{{ tab_url }}" >{{ tab_title }}</a>
+        {% endspaceless %}{% endloopregistry %}
+    </div>
+  <div class="clear"></div>
+  </div>
+
+
+
 
 <!-- end template header.html -->

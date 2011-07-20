@@ -11,9 +11,10 @@
         {% if settings.GOOGLE_SITEMAP_CODE %}
         <meta name="google-site-verification" content="{{ settings.GOOGLE_SITEMAP_CODE }}" />
         {% endif %}
-        <link rel="shortcut icon" href="{{ settings.APP_FAVICON }}" />
+        <link href="http://www.nuxeo.com/var/storage/community/favicon.png" type="image/png" rel="icon">
+	<link media="screen" type="text/css" href="http://www.nuxeo.com/var/storage/community/community_common.css" rel="stylesheet">
         <link href="{% media  "/media/style/style.css" %}" rel="stylesheet" type="text/css" />
-        {% if settings.USE_CUSTOM_CSS|or_preview:request %}
+	{% if settings.USE_CUSTOM_CSS|or_preview:request %}
         <link href="{% url custom_css %}" rel="stylesheet" type="text/css" />
         {% endif %}
         <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" />
@@ -47,7 +48,7 @@
         /* ]] */
         </script>
         <script type='text/javascript' src='{% media  "/media/js/osqa.main.js" %}'></script>
-        {% if user_messages %}
+	{% if user_messages %}
         <style type="text/css">
             body { margin-top:2.4em; }
         </style>
@@ -96,7 +97,7 @@
                     {% endblock %}
                 </div>
             </div>
-            <div class="spacer3"></div>
+            <div class="clear"></div>
         </div>
         {% endblock %}
         {% if settings.USE_CUSTOM_FOOTER|or_preview:request %}
@@ -137,6 +138,10 @@
                 })();
             </script>
         {% endif %}
+        <script type="text/javascript" src='{% media  "/media/js/portamento.js" %}'></script>
+        <script type="text/javascript">
+          $('#topBar').portamento({gap: 0});
+        </script>
     </body>
 </html>
 <!-- end template base_content.html -->

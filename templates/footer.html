@@ -1,19 +1,70 @@
 {% load extra_tags ui_registry i18n %}
 
-
-<div>
-    <div class="footerLinks" >
-        {% loadregistry footer_links %}<span class="link-separator"> |</span>{% endloadregistry %}
+<div class="foot">
+  <div class="FooterContainer">
+    <div class="FootLinks">
+      <ul>
+        <li><h6>More</h6>
+          <ul>
+            <li><a href="http://doc.nuxeo.com/">documentation</a>
+            </li>
+            <li><a href="http://blogs.nuxeo.com/">blogs</a>
+            </li>
+            <li>
+              <a href="http://www.nuxeo.com/en/resources/videos-on-demand">videos</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><h6>About Nuxeo</h6>
+          <ul>
+            <li><a href="http://www.nuxeo.com/">nuxeo.com</a>
+            </li>
+            <li><a href="http://www.nuxeo.org/">community</a>
+            </li>
+            <li><a href="http://www.nuxeo.com/en/about/careers">jobs</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><h6>Our products</h6>
+          <ul>
+            <li><a href="http://www.nuxeo.com/en/products/document-management">Document Management (DM)</a></li>
+            <li><a href="http://www.nuxeo.com/en/products/dam">Digital Asset Management (DAM)</a></li>
+            <li><a href="http://www.nuxeo.com/en/products/case-management">Case Management Framework (CMF)</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><h6>Our services</h6>
+          <ul>
+            <li><a href="http://www.nuxeo.com/en/subscription/connect">support</a></li>
+               <!-- was: nuxeo <span class="connect">•</span> Connect -->
+            <li><a href="http://www.nuxeo.com/en/services/training">training</a></li>
+            <li><a href="http://www.nuxeo.com/en/services/consulting">consulting</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><h6>Follow us</h6>
+          <ul>
+            <li><a onclick="_gaq.push(['_trackEvent', 'Social', 'Twitter', 'Go to Twitter page'])" href="http://twitter.com/nuxeo" rel="nofollow"><span class="twitter">twitter</span> /nuxeo</a></li>
+            <li>
+              <a onclick="_gaq.push(['_trackEvent', 'Social', 'LinkedIn', 'Go to LinkedIn group page'])" href="http://www.linkedin.com/groupsDirectory?itemaction=mclk&amp;anetid=43314&amp;impid=&amp;pgkey=anet_search_results&amp;actpref=anetsrch_name&amp;trk=anetsrch_name&amp;goback=%2Egdr_1288215250735_1" rel="nofollow"><span class="linkedIn">linkedIn</span> /Nuxeo
+                Community</a></li>
+            <li>
+              <a onclick="_gaq.push(['_trackEvent', 'Social', 'FaceBook', 'Go to FaceBook group page'])" href="http://www.facebook.com/group.php?gid=5568495138" rel="nofollow"><span class="facebook">facebook</span> /Nuxeo
+                Users</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-  <p>
-     <a href="http://osqa.net" target="_blank" title="OSQA {{ settings.OSQA_VERSION }} ({{ settings.SVN_REVISION }})">
-        powered by OSQA
-     </a>
-  </p>
+    <div class="Contact">
+      &copy;2010-2011 <span class="nuxeoLogo">nuxeo</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <small>Powered by 
+        <a href="http://osqa.net" target="_blank" title="OSQA {{ settings.OSQA_VERSION }} ({{ settings.SVN_REVISION }})">OSQA</a>
+      </small>
+    </div>
+  </div>
 </div>
- <div id="licenseLogo">
-  <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
-            <img src="{% media  "/media/images/by-sa-88x31.png" %}"" title="Creative Commons: Attribution - Share Alike" alt="cc-by-sa" width="88" height="31" />
-  </a>
- </div>
-
