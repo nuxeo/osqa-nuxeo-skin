@@ -5,6 +5,7 @@
 {% block forejs %}
         <script type='text/javascript' src='{% media  "/media/js/wmd/showdown.js" %}'></script>
         <script type='text/javascript' src='{% media  "/media/js/wmd/wmd.js" %}'></script>
+        <script type='text/javascript' src='{% media  "/media/js/tag_wizard.js" %}'></script>
         <link rel="stylesheet" type="text/css" href="{% media  "/media/js/wmd/wmd.css" %}" />
         <script type="text/html" id="question-summary-template">
             <div class="answer-summary">
@@ -13,6 +14,24 @@
                     <a class="question-hyperlink" href="%URL%" title="%SUMMARY%">%TITLE%</a>
                 </div>
             </div>
+        </script>
+        <script type="text/html" id="tag-wizard-template"> 
+            <form class="tag-wizard">
+                <p>
+                    This wizard will help you select a good tag for your audience.
+                    Feel free to add additional tags manually as well.
+                </p>
+                <p>
+                    <label for="product">Which product do you have a question about?</label>
+                    <select name="product" id="product"></select>
+                </p>
+                <p id="devq">
+                    <label>Is this a development question?</label>
+                    <input type="radio" name="development" value="true"> Yes
+                    <input type="radio" name="development" value="false" checked="checked"> No
+                </p>
+                
+            </form>
         </script>
         <script type="text/javascript">
         $(function(){
@@ -62,6 +81,7 @@
                 }
 
             });
+          tag_wizard();
 
         });
 
