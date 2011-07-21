@@ -15,10 +15,16 @@
  */
 
 var products = [
-    'Nuxeo DM', 'Nuxeo DAM', 'Nuxeo CMF', 'Nuxeo Marketplace', 'Nuxeo Studio'
+    {name: 'Nuxeo DM', id: 'document-management'},
+    {name: 'Nuxeo EP', id: 'ecm-platform'},
+    {name: 'Nuxeo DAM', id: 'digital-asset-management'},
+    {name: 'Nuxeo CMF', id: 'case-management'},
+    {name: 'Nuxeo Studio', id: 'nuxeo-studio'},
+    {name: 'Nuxeo Maketplace', id: 'nuxeo-marketplace'},
+    {name: 'Nuxeo Connect', id: 'nuxeo-connect'},
 ]
 var development_products = [
-    'Nuxeo DM', 'Nuxeo DAM', 'Nuxeo CMF', 'Nuxeo Marketplace', 'Nuxeo Studio'
+    //'Nuxeo DM', 'Nuxeo DAM', 'Nuxeo CMF', 'Nuxeo Marketplace', 'Nuxeo Studio'
 ]
 function tagify(phrase){
     return phrase.toLowerCase().replace(/ /g, '-')
@@ -42,8 +48,8 @@ $(function(){
         devq = wizard.find('#devq')
     product.append('<option value="">-------</option>')
     $.each(products, function(){
-        var p = String(this)
-        product.append('<option value="'+tagify(p)+'">'+p+'</option>')
+        p = this;
+        product.append('<option value="'+p.id+'">'+p.name+'</option>')
     })
     product.change(function(){
         for (var i=0; i<development_products.length; i++)
