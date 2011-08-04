@@ -15,8 +15,8 @@
             <div>{% ifequal question.answer_count 1 %}{% trans "answer" %}{% else %}{% trans "answers" %}{% endifequal %}</div>
         </div>
         <div class="views">
-             <div class="item-count">{{question.view_count|decorated_int|safe}}</div>
-             <div>{% ifequal question.view_count 1 %}{% trans "view" %}{% else %}{% trans "views" %}{% endifequal %}</div>
+           <div class="item-count">{{question.view_count|decorated_int|safe}}</div>
+           <div>{% ifequal question.view_count 1 %}{% trans "view" %}{% else %}{% trans "views" %}{% endifequal %}</div>
         </div>
     </div>
 

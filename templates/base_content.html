@@ -63,7 +63,8 @@
         {% if settings.USE_CUSTOM_HEAD|or_preview:request %}
             {{ settings.CUSTOM_HEAD|or_preview:request|safe }}
         {% endif %}
-        {% block forejs %}{% endblock %}
+        {% block forejs %}
+        {% endblock %}
         <link rel="search" type="application/opensearchdescription+xml" href="{% url opensearch %}" title="{{ settings.APP_SHORT_NAME }} Search" />
         {% loadregistry head_content %}{% endloadregistry %}
     </head>
@@ -72,7 +73,7 @@
             {% autoescape off %}
                 {% if user_messages %}
                     {% for message in user_messages %}
-                          <p class="darkred">{{ message }}</p>
+                          <p>{{ message }}</p>
                     {% endfor %}
                 {% endif %}
             {% endautoescape %}
@@ -83,6 +84,7 @@
                 {{ settings.CUSTOM_HEADER|or_preview:request|static_content:settings.CUSTOM_HEADER_RENDER_MODE }}
             </div>
         {% endif %}
+        <div class="beta">Beta</div>
         {% include "header.html" %}
         {% block page_center %}
         <div id="wrapper">
@@ -138,10 +140,6 @@
                 })();
             </script>
         {% endif %}
-        <script type="text/javascript" src='{% media  "/media/js/portamento.js" %}'></script>
-        <script type="text/javascript">
-          $('#topBar').portamento({gap: 0});
-        </script>
     </body>
 </html>
 <!-- end template base_content.html -->
