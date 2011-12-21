@@ -16,9 +16,8 @@
 
 var products = [
     {name: 'Document Management', id: 'document-management'},
-    {name: 'Nuxeo Platform', id: 'ecm-platform'},
+    {name: 'Nuxeo Platform', id: 'content-management-platform'},
     {name: 'Digital Asset Management', id: 'digital-asset-management'},
-    {name: 'Digital Asset Management', id: 'content-management-platform'},
     {name: 'Case Management', id: 'case-management'},
     {name: 'Social Collaboration', id: 'social-collaboration'},
     {name: 'Mobile Content Management', id: 'nuxeo-mobile'},
