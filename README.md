@@ -6,5 +6,7 @@ This is a custom theme used by http://answers.nuxeo.com for the famous Q&A syste
 Authors
 --------
 Lise Kemen
+
 Stefane Fermigier
+
 Laurent Doguin
