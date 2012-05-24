@@ -17,6 +17,11 @@
             </div>
         {% endif %}
     {% endif %}
+    {% if request.user.is_authenticated %}
+        <div class="boxC">
+            <h3>New to Nuxeo Answers?</h3> These guidelines can help: <a href="http://answers.nuxeo.com/questions/2434/my-nuxeo-car-doesnt-start1">My Nuxeo Car doesn't start!</a>
+        </div>
+    {% endif %}
     {% include "question_list/count.html" %}
     {% sidebar_upper %}
     {% if request.user.is_authenticated %}
