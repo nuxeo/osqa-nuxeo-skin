@@ -6,8 +6,9 @@ This is a custom theme used by http://answers.nuxeo.com for the famous Open Sour
 License
 --------
 
-The Nuxeo skin is released under the [CC-BY-3.0 license](http://creativecommons.org/licenses/by/3.0/).
-See the [terms of the license](http://creativecommons.org/licenses/by/3.0/).
+The Nuxeo skin is distributed for free under the terms of the [ GNU General Public Licence (GPL)](http://www.gnu.org/licenses/gpl.html).
+Feel free to fork it.
+See the [terms of the license](http://www.gnu.org/licenses/gpl.html).
 
 Authors
 --------
