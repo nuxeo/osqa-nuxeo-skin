@@ -3,10 +3,15 @@ About osqa-nuxeo-skin
 
 This is a custom theme used by http://answers.nuxeo.com for the famous Q&A system http://www.osqa.net/ .
 
+License
+--------
+
+The Nuxeo skin is released under the [CC-BY-3.0 license](http://creativecommons.org/licenses/by/3.0/).
+See the [terms of the license](http://creativecommons.org/licenses/by/3.0/).
+
 Authors
 --------
-Lise Kemen
 
-Stefane Fermigier
+Skin design: [Lise Kemen](https://github.com/lkemen)
 
-Laurent Doguin
+Code: [Stefane Fermigier](https://github.com/sfermigier), [Laurent Doguin](https://github.com/ldoguin), [Mathieu Guillaume](https://github.com/mguillaume)
