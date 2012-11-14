@@ -1,7 +1,7 @@
 About osqa-nuxeo-skin 
 ======================
 
-This is a custom theme used by http://answers.nuxeo.com for the famous Q&A system http://www.osqa.net/ .
+This is a custom theme used by http://answers.nuxeo.com for the famous Open Source Q&A system: [OSQA](http://www.osqa.net/).
 
 License
 --------
@@ -13,5 +13,4 @@ Authors
 --------
 
 Skin design: [Lise Kemen](https://github.com/lkemen)
-
-Code: [Stefane Fermigier](https://github.com/sfermigier), [Laurent Doguin](https://github.com/ldoguin), [Mathieu Guillaume](https://github.com/mguillaume)
+Code: [Stefane Fermigier](https://github.com/sfermigier), [Laurent Doguin](https://github.com/ldoguin), [Mathieu Guillaume](https://github.com/mguillaume).
