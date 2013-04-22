@@ -92,12 +92,12 @@
 </div>
 <div id="main-body" class="">
     <div id="askform">
-            <table style="width:100%;" id="question-table" {% post_classes question %}>
+            <table style="width:95%;" id="question-table" {% post_classes question %}>
                 <tr>
-                    <td style="width:30px;vertical-align:top">
+		    <td style="width:40px;vertical-align:top">
                         <div class="vote-buttons">
                             {% vote_buttons question request.user %}
-                            {% favorite_mark question request.user %}                            
+                            {% favorite_mark question request.user %}
                         </div>
                     </td>
                     <td>
@@ -105,24 +105,29 @@
                             <div class="question-body">
                                 {{ question.html|safe }}
                             </div>
-                            <div id="question-tags" class="tags-container tags">
-                                {% for tag in question.tagname_list %}
-                                    <a href="{% url tag_questions tag|urlencode %}" class="post-tag tag-link-{{ tag }}"
-                                        title="{% blocktrans with tag as tagname %}see questions tagged '{{ tagname }}'{% endblocktrans %}" rel="tag">{{ tag }}</a>
-                                {% endfor %}
-                            </div>
-                            <div id="question-controls" class="post-controls">                            
-                                {% post_controls question request.user %}
-                                {% wiki_symbol request.user question %}
-                            </div>
-                            <div class="post-update-info-container">
-                                    {% contributors_info question %}
-                            </div>
-                            {% comments question request.user %}
                         </div>
-                        
                     </td>
                 </tr>
+		<tr>
+		  <td colspan="2">
+		    <div class="">
+	 		<div id="question-tags" class="tags-container tags">
+                            {% for tag in question.tagname_list %}
+                                <a href="{% url tag_questions tag|urlencode %}" class="post-tag tag-link-{{ tag }}"
+                                    title="{% blocktrans with tag as tagname %}see questions tagged '{{ tagname }}'{% endblocktrans %}" rel="tag">{{ tag }}</a>
+                            {% endfor %}
+                        </div>
+                        <div id="question-controls" class="post-controls">
+                            {% post_controls question request.user %}
+                            {% wiki_symbol request.user question %}
+                        </div>
+                        <div class="post-update-info-container">
+                                {% contributors_info question %}
+                        </div>
+                       {% comments question request.user %}
+		    </div>
+		  </td>
+		</tr>
             </table>
             {% if question.nis.closed %}
             <div class="question-status" style="margin-bottom:15px">
@@ -134,11 +139,10 @@
             </div>
             {% endif %}
             {% if answers %}
-                <hr/>
                 <div class="tabBar">
                     <a name="sort-top"></a>
-                    <div class="headQuestions">
-                    {% blocktrans count answers.paginator.count as counter %}One Answer:{% plural %}{{counter}} Answers:{% endblocktrans %}
+	    <div class="headQuestions">
+                    {% blocktrans count answers.paginator.count as counter %}One Answer{% plural %}{{counter}} Answers{% endblocktrans %}
                     </div>
                     {{ answers.paginator.sort_tabs }}
                 </div>
@@ -147,9 +151,9 @@
                 {% for answer in answers.paginator.page %}
                     <a name="{{ answer.id }}"></a>
                     <div id="answer-container-{{ answer.id }}" class="answer {% post_classes answer %}">
-                        <table style="width:100%;">
+                        <table style="width:95%;">
                             <tr>
-                                <td style="width:30px;vertical-align:top">
+				<td style="width:40px;vertical-align:top">
                                     <div class="vote-buttons">
                                         {% vote_buttons answer request.user %}
                                         {% accept_button answer request.user %}
@@ -160,17 +164,23 @@
                                         <div class="answer-body">
                                             {{ answer.html|safe }}
                                         </div>
-                                        <div class="answer-controls post-controls">
-                                            {% post_controls answer request.user %}
-                                            {% wiki_symbol request.user answer %}
-                                        </div>
-                                        <div class="post-update-info-container">
-                                            {% contributors_info answer %}
-                                        </div>
-                                        {% comments answer request.user %}
                                     </div>
                                 </td>
                             </tr>
+			    <tr>
+			      <td colspan="2">
+				<div class="">
+				  <div class="answer-controls post-controls">
+                                      {% post_controls answer request.user %}
+                                      {% wiki_symbol request.user answer %}
+                                  </div>
+  				  <div class="post-update-info-container">
+                                  {% contributors_info answer %}
+                                  </div>
+                                  {% comments answer request.user %}
+				</div>
+			      </td>
+			    </tr>
                         </table>
                     </div>
                 {% endfor %}

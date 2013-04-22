@@ -1,42 +1,11 @@
 <!-- template header.html -->
 {% load extra_tags ui_registry i18n extra_filters markup %}
 
-<div class="header">
-  <div class="logoHome">
-    <a title="Home" href="/">
-      <img height="36" align="left" alt="Nuxeo Community" src="http://www.nuxeo.com/var/storage/community/nuxeo_logo.png">
-    </a>
-  </div>
-
-  <div class="externalLinks">
-    <ul>
-      <li class="active"><a href="http://community.nuxeo.com/">Home</a></li>
-      <li><a href="http://forum.nuxeo.com/">Forums</a></li>
-      <li><a href="http://doc.nuxeo.com/">Documentation</a></li>
-      <li><a href="http://blogs.nuxeo.com/">Blogs</a></li>
-    </ul>
-    <ul class="corp">
-      <li><a href="http://nuxeo.com/">Nuxeo.com</a></li>
-    </ul>
-  </div>
-</div>
-
   <div id="topBar">  
-	<div id="searchBar">
-    <form action="{% url search %}" method="get">
-        <div>
-            <input type="text" class="searchInput" value="{{ keywords }}" name="q" id="keywords" />
-            <input type="submit" name="Submit" value="{% trans "search" %}" class="searchBtn" />
+    <a href="{{settings.APP_BASE_URL}}"><img src="/m/nuxeo/media/images/nuxeo-answers.png" width="277" height="35" alt="Nuxeo Answers"/></a>
+    <div id="links">
+            {% loadregistry header_links %}{% endloadregistry %}
         </div>
-        <div class="options">
-            <input id="type-question" type="radio" value="question" name="t" 
-                checked="checked" /><label for="type-question">{% trans "questions" %}</label>
-            <input id="type-tag" type="radio" value="tag" name="t" /><label for="type-tag">{% trans "tags" %}</label>
-            <input id="type-user" type="radio" value="user" name="t" /><label for="type-user">{% trans "users" %}</label>
-        </div>
-    </form>	
-	</div>
-    <div class="ask"><a id="question" href="{% url ask %}" class="special">{% trans "ask a question" %}</a></div>
   <div class="clear"></div>
     </div>
         {% if settings.USE_ANNOUNCEMENT_BAR|or_preview:request %}
@@ -46,14 +15,26 @@
   {% endif %}
 
 <div id="roof">
-        <div id="links">
-            {% loadregistry header_links %}{% endloadregistry %}
-        </div>
+    <div class="ask"><a id="question" href="{% url ask %}" class="special">{% trans "ask a question" %}</a></div>
     <div id="nav">
         {% loopregistry page_top_tabs %}{% spaceless %}
             <a id="nav_{{ tab_name }}"{% ifequal tab tab_name %} class="on"{% endifequal %} href="{{ tab_url }}" >{{ tab_title }}</a>
         {% endspaceless %}{% endloopregistry %}
     </div>
+    <div id="searchBar">
+      <form action="{% url search %}" method="get">
+        <div class="searchContainer">
+            <input type="text" class="searchInput" value="{{ keywords }}" name="q" id="keywords" />
+            <input type="submit" name="Submit" value="{% trans "search" %}" class="searchBtn" />
+        </div>
+        <div class="options">
+            <input id="type-question" type="radio" value="question" name="t" 
+                checked="checked" /><label for="type-question">{% trans "questions" %}</label>
+            <input id="type-tag" type="radio" value="tag" name="t" /><label for="type-tag">{% trans "tags" %}</label>
+            <input id="type-user" type="radio" value="user" name="t" /><label for="type-user">{% trans "users" %}</label>
+        </div>
+       </form>
+     </div>
   <div class="clear"></div>
   </div>
 

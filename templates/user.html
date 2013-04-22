@@ -9,8 +9,7 @@
 {% block forestyle%}
     <style type="text/css">
  		.history-table td { padding: 5px; }
- 		.user-stats-table { margin-left:50px; }
-	</style>
+    </style>
 {% endblock %}
 {% block forejs %}
     {% if request.user.is_superuser or request.user == view_user %}

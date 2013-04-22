@@ -15,11 +15,15 @@
  */
 
 var products = [
-    {name: 'Nuxeo DM', id: 'document-management'},
-    {name: 'Nuxeo EP', id: 'ecm-platform'},
-    {name: 'Nuxeo DAM', id: 'digital-asset-management'},
-    {name: 'Nuxeo CMF', id: 'case-management'},
+    {name: 'Nuxeo Platform', id: 'content-management-platform'},
+    {name: 'Document Management', id: 'document-management'},
+    {name: 'Digital Asset Management', id: 'digital-asset-management'},
+    {name: 'Case Management', id: 'case-management'},
+    {name: 'Social Collaboration', id: 'social-collaboration'},
+    {name: 'Mobile Content Management', id: 'nuxeo-mobile'},
+    {name: 'Nuxeo Cloud', id: 'nuxeo-cloud'},
     {name: 'Nuxeo Studio', id: 'nuxeo-studio'},
+    {name: 'Nuxeo IDE', id: 'nuxeo-ide'},
     {name: 'Nuxeo Maketplace', id: 'nuxeo-marketplace'},
     {name: 'Nuxeo Connect', id: 'nuxeo-connect'},
 ]

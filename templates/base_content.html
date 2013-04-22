@@ -11,14 +11,18 @@
         {% if settings.GOOGLE_SITEMAP_CODE %}
         <meta name="google-site-verification" content="{{ settings.GOOGLE_SITEMAP_CODE }}" />
         {% endif %}
-        <link href="http://www.nuxeo.com/var/storage/community/favicon.png" type="image/png" rel="icon">
-	<link media="screen" type="text/css" href="http://www.nuxeo.com/var/storage/community/community_common.css" rel="stylesheet">
+        <link href="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/images/favicon.ico" type="image/png" rel="icon">
         <link href="{% media  "/media/style/style.css" %}" rel="stylesheet" type="text/css" />
 	{% if settings.USE_CUSTOM_CSS|or_preview:request %}
         <link href="{% url custom_css %}" rel="stylesheet" type="text/css" />
         {% endif %}
-        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" />
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css" />
         {% block forestyle %}{% endblock %}
+        
+        <!-- Common header and footer -->
+        <script type="text/javascript" src="/m/nuxeo/media/js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
+
         <script src="http://www.google.com/jsapi" type="text/javascript"></script>
         <script type="text/javascript">
             google.load("jquery", "1.4.2");
@@ -63,7 +67,8 @@
         {% if settings.USE_CUSTOM_HEAD|or_preview:request %}
             {{ settings.CUSTOM_HEAD|or_preview:request|safe }}
         {% endif %}
-        {% block forejs %}{% endblock %}
+        {% block forejs %}
+        {% endblock %}
         <link rel="search" type="application/opensearchdescription+xml" href="{% url opensearch %}" title="{{ settings.APP_SHORT_NAME }} Search" />
         {% loadregistry head_content %}{% endloadregistry %}
     </head>
@@ -72,7 +77,7 @@
             {% autoescape off %}
                 {% if user_messages %}
                     {% for message in user_messages %}
-                          <p class="darkred">{{ message }}</p>
+                          <p>{{ message }}</p>
                     {% endfor %}
                 {% endif %}
             {% endautoescape %}
@@ -83,6 +88,7 @@
                 {{ settings.CUSTOM_HEADER|or_preview:request|static_content:settings.CUSTOM_HEADER_RENDER_MODE }}
             </div>
         {% endif %}
+        <div class="beta">Beta</div>
         {% include "header.html" %}
         {% block page_center %}
         <div id="wrapper">
@@ -138,10 +144,6 @@
                 })();
             </script>
         {% endif %}
-        <script type="text/javascript" src='{% media  "/media/js/portamento.js" %}'></script>
-        <script type="text/javascript">
-          $('#topBar').portamento({gap: 0});
-        </script>
     </body>
 </html>
 <!-- end template base_content.html -->
