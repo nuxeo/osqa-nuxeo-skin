@@ -15,7 +15,7 @@
 {% enddeclare %}
 
 {% email %}
-    {% subject %}{% blocktrans %}{{ prefix }} New question: {{ question_title }} on {{ safe_app_name }}{% endblocktrans %}{% endsubject %}
+    {% subject %}{% blocktrans %}{{ prefix }} {{ question_title }}{% endblocktrans %}{% endsubject %}
 
     {% htmlcontent notifications/base.html %}
         <p style="{{ p_style }}">

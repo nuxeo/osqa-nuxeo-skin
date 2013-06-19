@@ -13,7 +13,7 @@
 {% enddeclare %}
 
 {% email %}
-    {% subject %}{% blocktrans %}{{ prefix }} New answer to: {{ question_title }}{% endblocktrans %}{% endsubject %}
+    {% subject %}{% blocktrans %}{{ prefix }} {{ question_title }}{% endblocktrans %}{% endsubject %}
 
     {% htmlcontent notifications/base.html %}
         <p style="{{ p_style }}">
