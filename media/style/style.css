@@ -142,12 +142,13 @@ li input {
 
 pre {
     background-color: #F5F5F5;
+    border: 1px solid #D9E8F1;
     font-family: Consolas, Monaco, Liberation Mono, Lucida Console, Monospace;
     font-size: 90%;
     margin: 10px auto 15px;
     overflow: auto;
     padding: 8px 5px;
-    width: 660px;
+    width: 600px;
 }
 
 code {
@@ -750,7 +751,10 @@ a.medal:hover {
     min-height: 100px;
 }
 
-.question-body p { font-size: 14px; }
+.question-body p { 
+  font-size: 14px;
+  max-width: 650px;
+  word-wrap: break-word; }
 
 .question-body img {
     max-width: 640px;
@@ -953,10 +957,14 @@ span.form-error {
 }
 
 .revision .summary span {
-    /**background-color: yellow;**/
     display: inline;
+    font-size: 150%;
     padding-left: 3px;
     padding-right: 3px;
+}
+
+.rev-body .text {
+    margin: 1em 0;
 }
 
 .revision h1 {
@@ -968,15 +976,15 @@ span.form-error {
 .revision-mark {
     display: inline-block;
     font-size: 90%;
-    overflow: hidden;
     text-align: left;
     width: 200px;
 }
 
 .revision-number {
     font-family: sans-serif;
-    font-size: 300%;
+    font-size: 200%;
     font-weight: bold;
+    padding: 0 .3em;
 }
 
 .revision .body {
@@ -984,7 +992,7 @@ span.form-error {
     padding-left: 10px;
 }
 
-del {
+.del {
     color: #FF5F5F;
 }
 
@@ -1521,7 +1529,7 @@ a.accept-answer.on, a.accept-answer:hover {
     clear: both;
     float: right;
     padding: 0;
-    width: 80%;
+    width: 85%;
 }
 
 .comments-container {
@@ -1553,15 +1561,21 @@ a.accept-answer.on, a.accept-answer:hover {
 }
 
 .comment-text {
-    color: #888;
+    color: #7e8c92;
     font-size: 12px;
-    margin: 3px 0 0 22px;
+    margin: 3px 0 0 12px;
+    max-width:540px;
+    overflow: auto;
     padding: 0;
     float:left;
 }
 
 .comment-text p {
     font-size: 12px;
+}
+
+.comment-text > pre {
+    width: 500px;
 }
 
 .comment-info {
