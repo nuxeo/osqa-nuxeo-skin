@@ -1,8 +1,10 @@
 <!-- template header.html -->
 {% load extra_tags ui_registry i18n extra_filters markup %}
 
+
   <div id="topBar">  
     <a href="{{settings.APP_BASE_URL}}"><img src="/m/nuxeo/media/images/nuxeo-answers.png" width="277" height="35" alt="Nuxeo Answers"/></a>
+
     <div id="links">
             {% loadregistry header_links %}{% endloadregistry %}
         </div>
@@ -15,7 +17,7 @@
   {% endif %}
 
 <div id="roof">
-    <div class="ask"><a id="question" href="{% url ask %}" class="special">{% trans "ask a question" %}</a></div>
+    <div class="ask"><a href="{% url ask %}" class="special questionBtn">{% trans "ask a question" %}</a></div>
     <div id="nav">
         {% loopregistry page_top_tabs %}{% spaceless %}
             <a id="nav_{{ tab_name }}"{% ifequal tab tab_name %} class="on"{% endifequal %} href="{{ tab_url }}" >{{ tab_title }}</a>

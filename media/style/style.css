@@ -266,7 +266,7 @@ blockquote {
     float:right; padding-top: 7px;
 }
 
-#question {
+.questionBtn {
     background-color: #0A3575;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -285,11 +285,20 @@ blockquote {
     transition: background-color .4s;
 }
 
-#question:hover {
+.questionBtn:hover {
     background-color: #1786db;
     text-decoration:none;
 }
 
+.bugreportBtn {
+    background-color: #BFCFD9;                                                                                     
+    color: black;                                                                                                                                  
+    border-color: #BFCFD9;         
+}
+.bugreportBtn:hover {
+    background-color: #d7e4ec;
+}
+                                                        
 #topBar {
     width:1040px;
     margin:7px auto;

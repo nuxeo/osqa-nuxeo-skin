@@ -1,3 +1,20 @@
 {% load extra_tags ui_registry i18n %}
 
+        <script type="text/javascript" src="https://jira-test.nuxeo.com/s/en_US-2n9wwh-1988229788/6109/3/1.4.0-m3/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=c15e0d55"></script>
 
+        <script type="text/javascript">
+          window.ATL_JQ_PAGE_PROPS = $.extend(window.ATL_JQ_PAGE_PROPS, {
+ 
+            triggerFunction : function( showCollectorDialog ) {
+              $('#feedback-button').click( function(e) {
+                e.preventDefault();
+                showCollectorDialog();
+              }); 
+            },
+
+            fieldValues: {
+              fullname : '{{user}}',
+              email : '{{user.email}}'
+            }               
+          });
+        </script>
