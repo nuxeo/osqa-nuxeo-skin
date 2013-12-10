@@ -279,6 +279,11 @@
 {% endblock %}
 
 {% block sidebar %}
+        <div class="boxC">
+          <h2>Bug Report</h2>
+            <p>You found a bug? Please make sure you've asked the question here before submitting a bug report.</p>
+            <a href="#" id="feedback-button" class="questionBtn bugreportBtn">Report a bug</a>
+        </div>
 <div class="boxC" id="subscription_box">
     {% include "subscription_status.html" %}
 </div>
@@ -328,5 +333,28 @@
 {% endblock %}
 
 {% block endjs %}
+
+
+<script type="text/javascript" src="https://jira.nuxeo.com/s/en_USnq7j3s-1988229788/6109/16/1.4.0-m3/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=c3757ac7"></script>
+
+        <script type="text/javascript">
+
+          window.ATL_JQ_PAGE_PROPS = $.extend(window.ATL_JQ_PAGE_PROPS, {
+ 
+            triggerFunction : function( showCollectorDialog ) {
+              $('#feedback-button').click( function(e) {
+                e.preventDefault();
+                showCollectorDialog();
+              }); 
+            },
+
+            fieldValues: {
+              fullname : '{{user}}',
+              email : '{{user.email}}',
+              customfield_10790 : 'http://answers.nuxeo.com{{ question.get_absolute_url }}'
+            }               
+          });
+        </script>
+
 {% endblock %}
 <!-- end question.html -->
