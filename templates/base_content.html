@@ -80,8 +80,9 @@
             window.analytics.identify('{{user.email}}', {
               email: '{{user.email}}',
               name: '{{user.real_name}}',
-              username: '{{user.username}}',
-              created: '{{user.date_joined}}'
+              answers_username: '{{user.username}}',
+              created: '{{user.date_joined}}',
+              answers_score: '{{user.reputation}}'
             });
           {% endif %}
         </script>
